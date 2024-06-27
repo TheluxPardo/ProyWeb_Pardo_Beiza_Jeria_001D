@@ -1,0 +1,48 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="{% static 'css/style_register.css' %}">
+    <link rel="stylesheet" href="{% static 'css/style_login.css' %}">
+    <link rel="stylesheet" href="{% static 'css/style_foter.css' %}">
+</head>
+<body>
+    <header>
+        <div class="menu container">
+            <a class="logo">OLYMPUS HAIRCUT</a>
+            <input type="checkbox" id="menu">
+            <label for="menu">
+                <img class="menu-icono" src="{% static 'img/menu.png' %}" alt="menu">
+            </label>
+            <nav class="navbar">
+                <ul>
+                    <li><a href="{% url 'inicio' %}">Inicio</a></li>
+                    <li><a href="{% url 'quienessomos' %}">Quienes Somos</a></li>
+                    <li><a href="{% url 'galeria' %}">Galeria</a></li>
+                    <a href="{% url 'login' %}"><button class="btnLogin">Ingresar</button></a>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    
+    
+    <div class="wrapper">
+        <div class="form-box login">
+            <h2>Login</h2>
+            <form method="post">
+                {% csrf_token %}
+                {{ form.as_p }}
+                <button type="submit" class="btn">Login</button>
+                <div class="login-register">
+                    <p>¿No tienes una cuenta? <a href="{% url 'register' %}" class="register-link">Registrarse</a></p>
+                </div>
+            </form>
+        </div>
+    </div>
+    
+    <script src="{% static 'js/script.js' %}"></script>
+</body>
+</html>

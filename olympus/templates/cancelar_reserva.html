@@ -1,0 +1,26 @@
+
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cancelar Reserva</title>
+</head>
+<body>
+    <h1>¿Estás seguro de querer cancelar esta reserva?</h1>
+
+    <p><strong>Fecha:</strong> {{ reserva.fecha }}</p>
+    <p><strong>Hora:</strong> {{ reserva.hora }}</p>
+    <p><strong>Servicio:</strong> {{ reserva.servicio }}</p>
+    <p><strong>Cliente:</strong> {{ reserva.cliente }}</p>
+
+    <form method="post">
+        {% csrf_token %}
+        <button type="submit">Confirmar Cancelación</button>
+    </form>
+</body>
+</html>
+
+#----------------------------------------
+

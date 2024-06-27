@@ -1,0 +1,233 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
+
+/* CSS Reset */
+* {
+    padding: 0;
+    margin: 0;
+    text-decoration: none;
+    list-style: none;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: black;
+    font-family: 'Poppins', sans-serif;
+    color: white;
+}
+
+/* Estilos para la sección Quienes somos */
+#quienes-somos {
+    background-color: #202020; /* Fondo */
+    padding: 60px 0;
+}
+
+#quienes-somos .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.seccion-title {
+    text-align: center;
+    font-size: 36px;
+    color: orange; /* Título */
+    margin-bottom: 40px;
+}
+
+.seccion-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.about,
+.mision,
+.vision {
+    width: 100%;
+    max-width: 600px;
+    margin-bottom: 40px;
+    background-color: white;
+    padding: 20px;
+    text-align: left;
+    display: flex;
+    align-items: center;
+}
+
+.about img,
+.mision img,
+.vision img {
+    width: 200px;
+    height: auto;
+    margin-right: 20px;
+}
+
+.about .info,
+.mision .info,
+.vision .info {
+    flex: 1;
+}
+
+.about .info h3,
+.mision .info h3,
+.vision .info h3 {
+    font-size: 24px;
+    color: orange;
+    margin-bottom: 10px;
+}
+
+.about .info p,
+.mision .info p,
+.vision .info p {
+    font-size: 18px;
+    color: black;
+    line-height: 1.6;
+}
+
+/* Centrado de video----------------------------------------------------- */
+#video {
+    background-color: #202020;
+    padding: 60px 0;
+}
+
+#video .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+#video .section-title {
+    text-align: center;
+    font-size: 36px;
+    color: orange;
+    margin-bottom: 40px;
+}
+
+.video-container {
+    max-width: 100%;
+    margin: 0 auto;
+    overflow: hidden;
+    text-align: center; /* Centrado horizontal del video */
+}
+
+video {
+    width: 100%;
+    height: auto;
+}
+
+
+/*Menu*/
+.navbar a:hover:after {
+    transform-origin: left;
+    transform: scaleX(1);
+}
+
+.navbar .btnLogin{
+    width: 130px;
+    height: 50px;
+    background: transparent;
+    border: 2px solid #fff;
+    outline: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1.1em;
+    color: #fff;
+    font-weight: 500;
+    margin-left: 40px;
+    transition: .5s;
+}
+
+.navbar .btnLogin:hover {
+    background: #d82d2d;
+    color: #162938;
+}
+
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.menu {
+    position: absolute;
+    top: 10px;
+    left: 0;
+    right: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 1000;
+}
+
+.menu .logo {
+    font-weight: bolder;
+    font-size: 25px;
+    color: #f61706;
+}
+
+.menu .navbar ul {
+    list-style: none;
+}
+
+.menu .navbar ul li {
+    position: relative;
+    float: left;
+}
+
+.menu .navbar ul li a{
+    font-size: 15px;
+    padding: 18px;
+    color: white;
+    display: block;
+
+}
+
+.menu .navbar ul li a:hover {
+    color: #f61706;
+}
+
+#menu {
+    display: none;
+}
+
+.menu label {
+    cursor: pointer;
+    display: none;
+}
+
+
+
+@media(max-width:991px ) {
+    .menu {
+        padding: 20px;
+
+    }
+
+    .menu label {
+        display: initial;
+    }
+
+    .menu .navbar {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background-color: #f61706;
+        display: none;
+    }
+
+    .menu .navbar ul li {
+        width: 100%;
+    }
+
+    .menu .navbar ul li a:hover {
+        color: #bebebe;
+    }
+
+    #menu:checked ~ .navbar {
+        display: initial;
+    }
+
+    .menu-icono {
+        width: 25px;
+    }
+
+}

@@ -1,0 +1,74 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro</title>
+    <link rel="stylesheet" href="{% static 'css/style_register.css' %}">
+    
+    <script src="https://kit.fontawesome.com/eb496ab1a0.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+
+    <header>
+
+        <div class="menu container">
+
+            <a class="logo">OLYMPUS HAIRCUT</a>
+            <input type="checkbox" id="menu">
+            <label for="menu">
+                <img class="menu-icono" src="{% static '/img/menu.png' %}" alt="menu">
+            </label>
+            <nav class="navbar">
+                <ul>
+                    <li><a>Inicio</a></li>
+                    <li><a href="{% url 'lista_reservas' %}">Reservas</a></li>
+                    <li><a href="{% url 'quienessomos' %}">Quiénes Somos</a></li>
+                    <li><a href="{% url 'galeria' %}">Galería</a></li>
+    
+                    {% if request.user.is_authenticated %}
+                        <li><a href="{% url 'salir' %}"><button class="btnLogin">Salir</button></a>
+                    {% else %}
+                        <a href="{% url 'login' %}"><button class="btnLogin">Ingresar</button></a>
+                        
+                    {% endif %}
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <main class="container">
+        <div class="form-box">
+            <h2>Registro</h2>
+            <form method="post">
+                {% csrf_token %}
+                <div class="form-group">
+                    <label for="id_username">Nombre de usuario:</label><br>
+                    {{ form.username }}
+                </div>
+                <div class="form-group">
+                    <label for="id_email">Correo electrónico:</label><br>
+                    {{ form.email }}
+                </div>
+                <div class="form-group">
+                    <label for="id_password1">Contraseña:</label><br>
+                    {{ form.password1 }}
+                </div>
+                <div class="form-group">
+                    <label for="id_password2">Confirmar contraseña:</label><br>
+                    {{ form.password2 }}
+                </div>
+                <button type="submit" class="btn">Registrarse</button>
+                <p>¿Ya tienes una cuenta? <a href="{% url 'login' %}" class="login-link">Ingresar</a></p>
+            </form>
+        </div>
+    </main>
+
+    
+
+</body>
+
+</html>

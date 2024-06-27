@@ -1,0 +1,72 @@
+{% load static %}
+<!-- agendar.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agendar</title>
+    <link rel="stylesheet" href="{% static 'css/style_galeria.css'%}">
+    <link rel="stylesheet" href="{% static 'css/style_foter.css'%}">
+</head>
+<body>
+    <header>
+        <div class="menu container">
+            <a class="logo">OLYMPUS HAIRCUT</a>
+            <nav class="navbar">
+                <ul>
+                    <li><a href="{% url 'inicio' %}">Inicio</a></li>
+                    <li><a href="{% url 'quienessomos' %}">Quienes Somos</a></li>
+                    <li><a href="{% url 'galeria' %}">Galería</a></li>
+                    {% if request.user.is_authenticated %}
+                        <li><a href="{% url 'salir' %}"><button class="btnLogin">Salir</button></a>
+                    {% else %}
+                        <a href="{% url 'login' %}"><button class="btnLogin">Ingresar</button></a>
+                    {% endif %}
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <h1>Agendar {{ corte }}</h1>
+        <form method="POST">
+            {% csrf_token %}
+            Nombre: <input type="text" name="nombre" pattern="[a-zA-Z\s]+" minlength="5" maxlength="15" required><br>
+            Teléfono: <input type="tel" name="telefono" pattern="[0-9]+" minlength="9" maxlength="9" required><br>
+            Gmail: <input type="email" name="email" required><br>
+            <input type="submit" value="Enviar">
+        </form>
+    </main>
+
+    <footer class="pie-pagina">
+        <div class="grupo-1">
+            <div class="box">
+                <figure>
+                    <a href="#">
+                        <img src="{% static 'img/logo.png' %}" alt="Logo de SLee Dw">
+                    </a>
+                </figure>
+            </div>
+            <div class="box">
+                <h2>¡Visítanos Hoy!</h2>
+                <p>¿Listo para un cambio de imagen? ¡Haz una cita en Barbería Cortés hoy mismo y descubre el arte en cada corte de pelo! ¡Esperamos recibirte pronto!</p>
+                <p>¡Síguenos en las redes sociales para estar al tanto de nuestras promociones y consejos de cuidado masculino!</p>
+            </div>
+            <div class="box">
+                <h2>SIGUENOS</h2>
+                <div class="red-social">
+                    <a href="#" class="fa fa-facebook"></a>
+                    <a href="#" class="fa fa-instagram"></a>
+                    <a href="#" class="fa fa-twitter"></a>
+                    <a href="#" class="fa fa-youtube"></a>
+                </div>
+            </div>
+        </div>
+        <div class="grupo-2">
+            <small>&copy; 2024 <b>Lucas Pardo| Jonh Beiza| Cesar Jeria</b> - Todos los Derechos Reservados.</small>
+        </div>
+    </footer>
+</body>
+</html>

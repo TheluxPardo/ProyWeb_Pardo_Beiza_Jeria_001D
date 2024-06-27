@@ -1,0 +1,36 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modificar Reserva</title>
+</head>
+<body>
+    <h1>Modificar Reserva</h1>
+
+    <form method="post">
+        {% csrf_token %}
+        <label for="fecha">Fecha:</label>
+        <input type="date" id="fecha" name="fecha" value="{{ reserva.fecha }}" required><br><br>
+
+        <label for="hora">Hora:</label>
+        <input type="time" id="hora" name="hora" value="{{ reserva.hora }}" required><br><br>
+
+        <label for="servicio">Servicio:</label>
+        <select id="servicio" name="servicio" required>
+            <option value="corte" {% if reserva.servicio == 'corte' %}selected{% endif %}>Corte de pelo</option>
+            <option value="tinte" {% if reserva.servicio == 'tinte' %}selected{% endif %}>Tinte</option>
+            <option value="alisado" {% if reserva.servicio == 'alisado' %}selected{% endif %}>Alisado</option>
+            <!-- Agrega más opciones según los servicios que ofreces -->
+        </select><br><br>
+
+        <label for="cliente">Cliente:</label>
+        <input type="text" id="cliente" name="cliente" value="{{ reserva.cliente }}" required><br><br>
+
+        <button type="submit">Guardar Cambios</button>
+    </form>
+</body>
+</html>
+#----------------------------------------
+

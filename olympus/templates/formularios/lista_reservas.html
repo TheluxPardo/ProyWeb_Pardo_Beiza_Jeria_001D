@@ -1,0 +1,28 @@
+{% load static %}
+{% extends 'base.html' %}
+{% block content %}
+<h2>Mis Reservas</h2>
+<a href="{% url 'crear_reserva' %}">Nueva Reserva</a>
+<table>
+    <tr>
+        <th>Servicio</th>
+        <th>Fecha</th>
+        <th>Hora</th>
+        <th>Estado</th>
+        <th>Acciones</th>
+    </tr>
+    {% for reserva in reservas %}
+    <tr>
+        <td>{{ reserva.servicio.nombre }}</td>
+        <td>{{ reserva.fecha }}</td>
+        <td>{{ reserva.hora }}</td>
+        <td>{{ reserva.estado }}</td>
+        <td>
+            <a href="{% url 'detalle_reserva' reserva.pk %}">Ver</a>
+            <a href="{% url 'editar_reserva' reserva.pk %}">Editar</a>
+            <a href="{% url 'confirmar_eliminar' reserva.pk %}">Eliminar</a>
+        </td>
+    </tr>
+    {% endfor %}
+</table>
+{% endblock %}

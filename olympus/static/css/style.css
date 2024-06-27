@@ -1,0 +1,454 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: content-box;
+    font-family: Arial, Helvetica, sans-serif;
+    text-transform: capitalize;
+    text-decoration: none;
+}
+
+body {
+    background-color: #000000;
+
+}
+
+header {
+    background-image: linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)), url(/img/hairdresser-wallpaper-preview.jpg);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 70vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+
+.navbar a:hover:after {
+    transform-origin: left;
+    transform: scaleX(1);
+}
+
+.navbar .btnLogin{
+    width: 130px;
+    height: 50px;
+    background: transparent;
+    border: 2px solid #fff;
+    outline: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1.1em;
+    color: #fff;
+    font-weight: 500;
+    margin-left: 40px;
+    transition: .5s;
+}
+
+.navbar .btnLogin:hover {
+    background: #d82d2d;
+    color: #162938;
+}
+
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.menu {
+    position: absolute;
+    top: 10px;
+    left: 0;
+    right: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 1000;
+}
+
+.menu .logo {
+    font-weight: bolder;
+    font-size: 25px;
+    color: #f61706;
+}
+
+.menu .navbar ul {
+    list-style: none;
+}
+
+.menu .navbar ul li {
+    position: relative;
+    float: left;
+}
+
+.menu .navbar ul li a{
+    font-size: 15px;
+    padding: 18px;
+    color: white;
+    display: block;
+
+}
+
+.menu .navbar ul li a:hover {
+    color: #f61706;
+}
+
+#menu {
+    display: none;
+}
+
+.menu label {
+    cursor: pointer;
+    display: none;
+}
+
+.header-text {
+    text-align: center;
+    width: 700px;
+}
+
+.header-text h1 {
+    color: aliceblue;
+    font-size: 55px;
+}
+
+.header-text p {
+    margin-top: 35px;
+    color: white;
+}
+
+.btn-1 {
+    display: inline-block;
+    background-color: #f61706;
+    margin-top: 35px;
+    padding: 15px 25px;
+    border-radius: 25px;
+    color: bisque;
+}
+
+.btn-1:hover {
+    background-color: #700e07;
+}
+
+.services {
+    padding: 50px 0px;
+    text-align: center;
+    color: aliceblue;
+}
+
+.services h2 {
+    font-size:  45px;
+    margin-bottom: 25px;
+}
+
+.txt-1 {
+    font-size: 18px;
+    padding: 0px 200px;
+}
+
+.porfolio {
+    text-align: center;
+    padding: 50px 0px;
+    color: white;
+}
+
+.porfolio-txt {
+    margin-bottom: 50px;
+}
+
+.porfolio-txt h2 {
+    font-size: 55px;
+    margin-bottom: 55px;
+}
+
+.porfolio-txt p {
+    font-size: 25px;
+}
+
+.imgs {
+    display: flex;
+    justify-content: center;
+}
+
+.imgs img {
+    width: 250px;
+    margin: 0px 10px;
+}
+
+.bg-sec {
+    background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url(/img/two-barbers-chairs-in-front-of-mirrors-inside-room.jpg);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    margin: 35px 0px;
+}
+
+.bg-txt {
+    padding: 100px 0px;
+    text-align: center;
+    color: aliceblue;
+}
+
+.bg-txt h2 {
+    font-size:  55px;
+    margin-bottom: 35px;
+}
+
+.bg-txt p {
+    font-size: 18px;
+    margin-bottom: 25px;
+}
+
+.prices {
+    padding: 50px 0px;
+    display: flex;
+    justify-content: space-between;
+    color: aliceblue;
+}
+
+.price {
+    text-align: center;
+}
+
+.prices h3 {
+    font-size: 50px;
+    margin-bottom: 25px;
+}
+
+.price ul li {
+    font-size: 18px;
+}
+
+.ft {
+    display: flex;
+    justify-content: space-between;
+}
+
+.enlace h3 {
+    color: aliceblue;
+    font-size: 20px;
+    margin-bottom: 25px;
+}
+
+.enlace li{
+    list-style: none;
+}
+
+.enlace a {
+    color: white;
+    display: block;
+    margin-bottom: 15px;
+}
+
+.enlace form {
+    display: flex;
+    flex-direction: column;
+}
+
+
+/*Carrusel*/
+.Carousel{
+    width: 100%;
+    margin: 0 0px 60px;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    display: flex;
+    height: 100vh;
+    width: 100%;
+    align-items: center;
+}
+.Carousel h2{
+    font-size: 26px;
+    line-height: 38px;
+    padding-bottom: 24px;
+    opacity: .9;
+    text-transform: uppercase;
+    letter-spacing: 10px;
+    text-align: center;
+}
+
+/* images */
+
+.slick-list{
+    position: relative;
+    display: flex;
+    align-items: center;
+    width: fit-content;
+    height: 304px;
+    padding: 10px 0px;
+    margin: 0px auto;
+    max-width: 90vw;
+    overflow: hidden;
+}
+.slick-track{
+    position: relative;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    transition: .5s ease-in-out;
+}
+.slick{
+    position: relative;
+    width: 275px;
+    padding: 0 18px;
+    float: left;
+    box-sizing: border-box;
+    display: flex;
+    height: 100%;
+}
+.slick h4{
+    position: absolute;
+    z-index: 1;
+    font-size: 22px;
+    line-height: 23px;
+    color: #fff;
+    padding: 15px;
+}
+.slick h4 small{
+    font-size: 15px;
+    display: block;
+}
+.slick a img{
+    object-fit: cover;
+    height: 300px;
+    width: 100%;
+    border-radius: 4px;
+    box-shadow: 0 2px 5px 0 rgba(0,0,0,.5);
+    transition: .3s ease-in-out;
+}
+.slick a img:hover{
+    opacity: .85;
+}
+
+/* buttons */
+
+.slick-arrow{
+    border-radius: 30px;
+    background-color: #fff;
+    position: absolute;
+    z-index: 4;
+    width: 48px;
+    height: 48px;
+    text-align: center;
+    box-shadow: 0 2px 5px 0 rgba(0,0,0,.15);
+    border: 0;
+    cursor: pointer;
+}
+.slick-arrow:focus{
+    outline: 0;
+}
+.slick-arrow svg{
+    width: 12px;
+    height: 100%;
+    color: rgba(0,0,0,.7);
+}
+.slick-prev{
+    left: 0px;
+}
+.slick-next{
+    right: 0px;
+}
+
+
+@media(max-width:991px ) {
+    .menu {
+        padding: 20px;
+
+    }
+
+    .menu label {
+        display: initial;
+    }
+
+    .menu .navbar {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background-color: #f61706;
+        display: none;
+    }
+
+    .menu .navbar ul li {
+        width: 100%;
+    }
+
+    .menu .navbar ul li a:hover {
+        color: #bebebe;
+    }
+
+    #menu:checked ~ .navbar {
+        display: initial;
+    }
+
+    .menu-icono {
+        width: 25px;
+    }
+
+    header {
+        height: 80vh;
+    }
+
+    .header-text {
+        margin-top: 50px;
+        padding: 0px 25px;
+    }
+
+    .services{
+        padding: 30px;
+    }
+
+    .txt-1 {
+        padding: 30px;
+    }
+
+    .porfolio {
+        padding: 0px 30px;
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .porfolio-txt p {
+        margin: 0;
+    }
+
+    .imgs {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .imgs img {
+        margin: 15px 0px 0px 0px;
+    }
+
+    .bg-txt {
+        padding: 30px;
+    }
+
+    .prices {
+        flex-direction: column;
+        align-items: center;
+        padding: 30px;
+    }
+
+    .price {
+        margin-bottom: 15px;
+    }
+
+    footer {
+        padding: 30px;
+    }
+
+    .ft {
+        text-align: center;
+        flex-direction: column;
+    }
+
+    .enlace form {
+        align-items: center;
+    }
+}
+

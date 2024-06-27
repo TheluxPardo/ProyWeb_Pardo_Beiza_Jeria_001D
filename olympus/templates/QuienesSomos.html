@@ -1,0 +1,106 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{% static 'css/style_quienesS.css'%}">
+    <link rel="stylesheet" href="{% static 'css/style_foter.css'%}">
+</head>
+<body>
+    <header>
+        <div class="menu container">
+
+            <a class="logo">OLYMPUS HAIRCUT</a>
+            <input type="checkbox" id="menu">
+            <label for="menu">
+                <img class="menu-icono" src="{% static 'img/menu.png' %}" alt="menu">
+            </label>
+            <nav class="navbar">
+                <ul>
+                    <li><a href="{% url 'inicio' %}">Inicio</a></li>
+                    <li><a>Quienes Somos</a></li>
+                    <li><a href="{% url 'galeria' %}">Galeria</a></li>
+                    {% if request.user.is_authenticated %}
+                        <li><a href="{% url 'salir' %}"><button class="btnLogin">Salir</button></a>
+                    {% else %}
+                        <a href="{% url 'login' %}"><button class="btnLogin">Ingresar</button></a>
+                    {% endif %}
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section id="quienes-somos">
+        <div class="container">
+            <h2 class="seccion-title">Quiénes somos</h2>
+            <div class="seccion-content">
+                <div class="about">
+                    <img src="{% static 'img/p111.jpg' %}" alt="Nuestra historia">
+                    <div class="info">
+                        <h3>Nuestra historia</h3>
+                        <p>Somos una barbería/peluquería dedicada a proporcionar servicios de calidad a nuestros clientes. Fundada en 2021, hemos construido una sólida reputación en la comunidad gracias a nuestro equipo de expertos y nuestra pasión por el arte del cuidado del cabello y la barba.</p>
+                    </div>
+                </div>
+                <div class="mision">
+                    <img src="{% static 'img/p22222.jpg' %}" alt="Nuestra misión">
+                    <div class="info">
+                        <h3>Nuestra misión</h3>
+                        <p>Nuestra misión es ofrecer a nuestros clientes una experiencia excepcional cada vez que nos visitan. Nos esforzamos por proporcionar cortes de cabello y afeitados precisos, junto con un servicio personalizado que refleje nuestra dedicación a la satisfacción del cliente.</p>
+                    </div>
+                </div>
+                <div class="vision">
+                    <img src="{% static 'img/servicio-1.jpg' %}" alt="Nuestra visión">
+                    <div class="info">
+                        <h3>Nuestra visión</h3>
+                        <p>Nuestra visión es convertirnos en el destino preferido de hombres y mujeres que buscan servicios de barbería/peluquería de alta calidad. Buscamos expandirnos y mejorar continuamente para seguir siendo líderes en la industria y satisfacer las necesidades cambiantes de nuestros clientes.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="video">
+        <div class="container">
+            <h2 class="section-title">MÁS DE OLYMPUS HAIRCUT</h2>
+            <div class="video-container">
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/q4kWoDn5yNI" frameborder="0" allowfullscreen></iframe>
+            </div>
+        </div>
+    </section>
+
+    <footer class="pie-pagina">
+        <div class="grupo-1">
+            <div class="box">
+                <figure>
+                    <a href="#">
+                        <img src="{% static 'img/logo.png' %}" alt="Logo de SLee Dw">
+                    </a>
+                </figure>
+            </div>
+            <div class="box">
+                <h2>¡Visítanos Hoy!</h2>
+                <p>¿Listo para un cambio de imagen? ¡Haz una cita en Barbería Cortés hoy mismo y descubre el arte
+                    en cada corte de pelo! ¡Esperamos recibirte pronto!</p>
+                <p>¡Síguenos en las redes sociales para estar al tanto de nuestras promociones y consejos de
+                    cuidado masculino!</p>
+            </div>
+            <div class="box">
+                <h2>SIGUENOS</h2>
+                <div class="red-social">
+                    <a href="#" class="fa fa-facebook"></a>
+                    <a href="#" class="fa fa-instagram"></a>
+                    <a href="#" class="fa fa-twitter"></a>
+                    <a href="#" class="fa fa-youtube"></a>
+                </div>
+            </div>
+        </div>
+        <div class="grupo-2">
+            <small>&copy; 2024 <b>Lucas Pardo| Jonh Beiza| Cesar Jeria</b> - Todos los Derechos Reservados.</small>
+        </div>
+    </footer>
+
+    <script src="https://kit.fontawesome.com/2cb25f2c39.js"></script>
+</body>
+</html>

@@ -1,0 +1,38 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crear Nueva Reserva</title>
+</head>
+<body>
+    <h1>Reservar Nueva Hora</h1>
+
+    <form method="post">
+        {% csrf_token %}
+        <label for="fecha">Fecha:</label>
+        <input type="date" id="fecha" name="fecha" required><br><br>
+
+        <label for="hora">Hora:</label>
+        <input type="time" id="hora" name="hora" required><br><br>
+
+        <label for="servicio">Servicio:</label>
+        <select id="servicio" name="servicio" required>
+            <option value="corte">Corte de pelo</option>
+            <option value="tinte">Tinte</option>
+            <option value="alisado">Alisado</option>
+            <!-- Agrega más opciones según los servicios que ofreces -->
+        </select><br><br>
+
+        <label for="cliente">Cliente:</label>
+        <input type="text" id="cliente" name="cliente" required><br><br>
+
+        <button type="submit">Reservar Hora</button>
+    </form>
+</body>
+</html>
+#---------------------------
+
+
+
